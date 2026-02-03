@@ -481,6 +481,23 @@
 <body>
     <div class="container">
         <header>
+            <div style="position: absolute; top: 20px; right: 20px;">
+                <button onclick="toggleLanguage()" id="langButton" style="
+                    background: rgba(255,255,255,0.25);
+                    backdrop-filter: blur(10px);
+                    border: 2px solid rgba(255,255,255,0.3);
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 25px;
+                    font-size: 1em;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                ">
+                    EN
+                </button>
+            </div>
             <h1>🌊 시애틀 힐링 투어 🏔️</h1>
             <p style="font-size: 1.3em; margin: 15px 0; font-weight: 300;">가정교회 목회자 사모님들을 위한 특별한 하루</p>
             <p style="font-size: 1.05em; opacity: 0.9;">2026년 2월 4일(수)</p>
@@ -1352,6 +1369,183 @@
                 }
             }
         });
+
+        // 언어 전환 기능
+        let currentLang = 'ko';
+        
+        const translations = {
+            ko: {
+                // Header
+                title: '🌊 시애틀 힐링 투어 🏔️',
+                subtitle: '가정교회 목회자 사모님들을 위한 특별한 하루',
+                date: '2026년 2월 4일(수)',
+                verse: '"수고하고 무거운 짐 진 자들아 다 내게로 오라<br>내가 너희를 쉬게 하리라" - 마태복음 11:28',
+                
+                // Timeline
+                schedule: '📅 하루 일정',
+                scheduleSubtitle: '항목을 클릭하면 상세 정보를 보실 수 있습니다',
+                timeline: [
+                    '레돈도 숙소 출발 - 해변 보드워크 산책 & 기도',
+                    '레돈도 해변 → 스노퀄미 폭포 이동 (차량, 약 50분)',
+                    '스노퀄미 폭포 관람 및 트레일 산책 (80분)',
+                    '스노퀄미 폭포 → Falls Buffet 이동 (차량, 20분)',
+                    'Falls Buffet 점심식사',
+                    '스노퀄미 → 파이크 플레이스 마켓 이동 (차량, 약 50분)',
+                    '파이크 플레이스 마켓 & 스타벅스 1호점 (75분)',
+                    '파이크 플레이스 → 아마존 스피어스 이동 (도보 10분)',
+                    '아마존 스피어스 외부 관람 & 사진 (25분)',
+                    '아마존 스피어스 → 케리 공원 이동 (차량, 15분)',
+                    '⭐ 케리 공원 - 일몰 전 전망 & 단체 사진 (35분)',
+                    '케리 공원 → 가스 웍스 공원 이동 (차량, 15분)',
+                    '가스 웍스 공원 산책 및 유니언 호수 전망 (15분)',
+                    '가스 웍스 공원 → 레돈도 숙소 귀환 (차량, 약 30분)',
+                    '🏠 숙소 도착 - 저녁 교제'
+                ],
+                
+                // Cards
+                destinations: '✨ 관광 명소 둘러보기',
+                destinationsSubtitle: '카드를 클릭하여 상세 정보 확인',
+                cards: [
+                    { title: '준비물 체크리스트', subtitle: '투어 전 꼭 확인하세요' },
+                    { title: '레돈도 해변', subtitle: '여정의 시작, 바다가 주는 평안' },
+                    { title: '스노퀄미 폭포', subtitle: '끝없이 흐르는 은혜' },
+                    { title: 'Falls Buffet', subtitle: '풍성한 식탁, 함께 나누는 교제' },
+                    { title: '파이크 플레이스', subtitle: '작은 시작의 위대함' },
+                    { title: '아마존 스피어스', subtitle: '창조 세계의 청지기' },
+                    { title: '케리 공원', subtitle: 'Golden Hour의 축복' },
+                    { title: '가스 웍스 공원', subtitle: '회복과 재창조의 희망' }
+                ],
+                
+                // Prayer & Footer
+                prayer: '사모님들을 위한 축복 기도',
+                footer1: '시애틀 힐링 투어',
+                footer2: '2026년 2월 4일(수) | 가정교회 목회자 사모님들을 위한 특별한 하루',
+                accommodationTitle: '🏠 레돈도 숙소 (3박 4일)',
+                departure: '출발:',
+                return: '귀환:',
+                accommodation: '숙소:'
+            },
+            en: {
+                // Header
+                title: '🌊 Seattle Healing Tour 🏔️',
+                subtitle: 'A Special Day for House Church Pastors\' Wives',
+                date: 'Wednesday, February 4, 2026',
+                verse: '"Come to me, all you who are weary and burdened,<br>and I will give you rest" - Matthew 11:28',
+                
+                // Timeline
+                schedule: '📅 Daily Schedule',
+                scheduleSubtitle: 'Click items to view details',
+                timeline: [
+                    'Depart from Redondo - Boardwalk Walk & Prayer',
+                    'Redondo Beach → Snoqualmie Falls (Car, ~50 min)',
+                    'Snoqualmie Falls Tour & Trail Walk (80 min)',
+                    'Snoqualmie Falls → Falls Buffet (Car, 20 min)',
+                    'Falls Buffet Lunch',
+                    'Snoqualmie → Pike Place Market (Car, ~50 min)',
+                    'Pike Place Market & Original Starbucks (75 min)',
+                    'Pike Place → Amazon Spheres (Walk, 10 min)',
+                    'Amazon Spheres Exterior Tour & Photos (25 min)',
+                    'Amazon Spheres → Kerry Park (Car, 15 min)',
+                    '⭐ Kerry Park - Pre-sunset View & Group Photos (35 min)',
+                    'Kerry Park → Gas Works Park (Car, 15 min)',
+                    'Gas Works Park Walk & Lake Union View (15 min)',
+                    'Gas Works Park → Redondo Accommodation (Car, ~30 min)',
+                    '🏠 Arrive at Accommodation - Evening Fellowship'
+                ],
+                
+                // Cards
+                destinations: '✨ Explore Attractions',
+                destinationsSubtitle: 'Click cards for more information',
+                cards: [
+                    { title: 'Packing Checklist', subtitle: 'Must check before tour' },
+                    { title: 'Redondo Beach', subtitle: 'Journey begins, peace from the sea' },
+                    { title: 'Snoqualmie Falls', subtitle: 'Ever-flowing grace' },
+                    { title: 'Falls Buffet', subtitle: 'Abundant table, shared fellowship' },
+                    { title: 'Pike Place Market', subtitle: 'Greatness of small beginnings' },
+                    { title: 'Amazon Spheres', subtitle: 'Stewards of creation' },
+                    { title: 'Kerry Park', subtitle: 'Golden Hour blessing' },
+                    { title: 'Gas Works Park', subtitle: 'Hope of restoration & recreation' }
+                ],
+                
+                // Prayer & Footer
+                prayer: 'Blessing Prayer for Pastors\' Wives',
+                footer1: 'Seattle Healing Tour',
+                footer2: 'Wednesday, February 4, 2026 | A Special Day for House Church Pastors\' Wives',
+                accommodationTitle: '🏠 Redondo Accommodation (3 Nights, 4 Days)',
+                departure: 'Departure:',
+                return: 'Return:',
+                accommodation: 'Address:'
+            }
+        };
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'ko' ? 'en' : 'ko';
+            currentLang = newLang;
+            
+            // 버튼 텍스트 변경
+            document.getElementById('langButton').textContent = newLang === 'ko' ? 'EN' : '한글';
+            
+            const t = translations[newLang];
+            
+            // Header
+            document.querySelector('header h1').innerHTML = t.title;
+            const headerPs = document.querySelectorAll('header > p');
+            if (headerPs[0]) headerPs[0].textContent = t.subtitle;
+            if (headerPs[1]) headerPs[1].textContent = t.date;
+            
+            const verseDiv = document.querySelector('header div[style*="margin-top: 30px"] p');
+            if (verseDiv) verseDiv.innerHTML = t.verse;
+            
+            // Timeline 제목
+            const scheduleH2 = document.querySelector('.timeline h2');
+            if (scheduleH2) scheduleH2.textContent = t.schedule;
+            
+            const scheduleP = document.querySelector('.timeline > p');
+            if (scheduleP) scheduleP.textContent = t.scheduleSubtitle;
+            
+            // Timeline 항목들
+            const timelineActivities = document.querySelectorAll('.timeline-item .activity');
+            timelineActivities.forEach((activity, index) => {
+                if (t.timeline[index]) {
+                    activity.textContent = t.timeline[index];
+                }
+            });
+            
+            // 숙소 정보 박스
+            const accomBox = document.querySelector('.timeline div[style*="background: linear-gradient(120deg, #a8e6cf"]');
+            if (accomBox) {
+                const accomPs = accomBox.querySelectorAll('p');
+                if (accomPs[0]) accomPs[0].innerHTML = t.accommodationTitle;
+                if (accomPs[1]) accomPs[1].innerHTML = `<strong>${t.departure}</strong> 오전 9:30 AM`;
+                if (accomPs[2]) accomPs[2].innerHTML = `<strong>${t.return}</strong> 오후 6:00 PM`;
+                if (accomPs[3]) accomPs[3].innerHTML = `<strong>${t.accommodation}</strong> 28736 Redondo Beach Dr S, Des Moines, WA 98198`;
+            }
+            
+            // Destinations 제목
+            const destinationsH2 = document.querySelector('.destinations-section h2');
+            if (destinationsH2) destinationsH2.textContent = t.destinations;
+            
+            const destinationsP = document.querySelector('.destinations-section .subtitle');
+            if (destinationsP) destinationsP.textContent = t.destinationsSubtitle;
+            
+            // Cards
+            const cards = document.querySelectorAll('.destination-card');
+            cards.forEach((card, index) => {
+                const title = card.querySelector('.card-title');
+                const subtitle = card.querySelector('.card-subtitle');
+                if (title && t.cards[index]) title.textContent = t.cards[index].title;
+                if (subtitle && t.cards[index]) subtitle.textContent = t.cards[index].subtitle;
+            });
+            
+            // Prayer
+            const prayerP = document.querySelector('.prayer p[style*="font-weight: 600"]');
+            if (prayerP) prayerP.textContent = t.prayer;
+            
+            // Footer
+            const footerPs = document.querySelectorAll('footer > p');
+            if (footerPs[0]) footerPs[0].textContent = t.footer1;
+            if (footerPs[1]) footerPs[1].textContent = t.footer2;
+        }
     </script>
 </body>
 </html>
