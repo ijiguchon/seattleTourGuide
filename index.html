@@ -522,77 +522,125 @@
 
         <section class="timeline">
             <h2>📅 하루 일정</h2>
-            <p style="text-align: center; color: #86868b; margin-bottom: 30px;">항목을 클릭하면 상세 정보를 보실 수 있습니다</p>
-            <div class="timeline-item" onclick="openFromTimeline('redondo', this)">
-                <div class="time">09:30</div>
-                <div class="activity">레돈도 숙소 출발 - 해변 보드워크 산책 & 기도</div>
+            <p style="text-align: center; color: #86868b; margin-bottom: 30px;">🚗 교통 정보 보려면 클릭 | 📍 관광지 상세는 아래 카드 참조</p>
+            
+            <!-- 구글 맵 링크 -->
+            <div style="margin-bottom: 25px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);">
+                <h3 style="color: white; margin-bottom: 12px; font-size: 1.2em; font-weight: 700;">🗺️ 운전자용 전체 경로</h3>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 12px;">차량 3대(7인승×2, 5인승×1) 전체 경로</p>
+                <a href="https://maps.app.goo.gl/LYAynpH5u1BSJDVm7" target="_blank" style="display: block; background: white; color: #667eea; padding: 15px 25px; border-radius: 10px; text-decoration: none; font-weight: 700; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-size: 1.1em;">
+                    📱 구글 맵 열기
+                </a>
             </div>
+
+            <div class="timeline-item">
+                <div class="time">09:00</div>
+                <div class="activity">🚗 차량 배정 (1호차 4명 / 2호차 7명 / 3호차 7명)</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">09:30</div>
+                <div class="activity">🏠 레돈도 숙소 출발</div>
+            </div>
+            
             <div class="timeline-item">
                 <div class="time">09:30 - 10:20</div>
-                <div class="activity">레돈도 해변 → 스노퀄미 폭포 이동 (차량, 약 50분)</div>
+                <div class="activity">🚙 이동 50분 (I-90 E)</div>
             </div>
-            <div class="timeline-item" onclick="openFromTimeline('snoqualmie', this)">
-                <div class="time">10:20 - 11:00</div>
-                <div class="activity">스노퀄미 폭포 관람 및 트레일 산책</div>
+            
+            <div class="timeline-item" onclick="openModal('traffic_snoqualmie')" style="cursor: pointer; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">
+                <div class="time">10:20 - 11:30</div>
+                <div class="activity" style="font-weight: 800; font-size: 1.1em;">① 💧 스노퀄미 폭포 (70분) 👉 교통정보</div>
             </div>
-            <div class="timeline-item" onclick="openFromTimeline('buffet', this)">
-                <div class="time">12:00 - 13:30</div>
-                <div class="activity">Falls Buffet 점심식사</div>
+            
+            <div class="timeline-item">
+                <div class="time">11:30 - 11:40</div>
+                <div class="activity">🚙 이동 10분</div>
             </div>
+            
+            <div class="timeline-item" onclick="openModal('traffic_buffet')" style="cursor: pointer; background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);">
+                <div class="time">11:45 - 12:45</div>
+                <div class="activity" style="font-weight: 800; font-size: 1.1em;">② 🍽️ Falls Buffet 점심 (60분) 👉 교통정보</div>
+            </div>
+
+            <div class="timeline-item" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); border: 3px solid #ff4444;">
+                <div class="time" style="background: rgba(255,255,255,0.3); color: white; font-weight: 700;">12:40</div>
+                <div class="activity" style="font-weight: 700; color: white;">🚻 화장실 골든타임!</div>
+            </div>
+            
             <div class="timeline-item">
                 <div class="time">12:45 - 13:35</div>
-                <div class="activity">스노퀄미 → 파이크 플레이스 마켓 이동 (차량, 약 50분)</div>
+                <div class="activity">🚙 이동 50분 (I-90 W, 시애틀)</div>
             </div>
-            <div class="timeline-item" onclick="openFromTimeline('pike', this)">
+            
+            <div class="timeline-item" onclick="openModal('traffic_pike')" style="cursor: pointer; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);">
                 <div class="time">13:35 - 14:50</div>
-                <div class="activity">파이크 플레이스 마켓 & 스타벅스 1호점</div>
+                <div class="activity" style="font-weight: 800; font-size: 1.1em;">③ 🏪 파이크 플레이스 마켓 (75분) 👉 교통정보</div>
             </div>
-            <div class="timeline-item" onclick="openFromTimeline('amazon', this)">
+
+            <div class="timeline-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border: 3px solid #0099ff;">
+                <div class="time" style="background: rgba(255,255,255,0.3); color: white; font-weight: 700;">14:50</div>
+                <div class="activity" style="font-weight: 700; color: white;">🚻 화장실 & 집결 (주차장)</div>
+            </div>
+            
+            <div class="timeline-item">
                 <div class="time">14:50 - 15:00</div>
-                <div class="activity">파이크 플레이스 → 아마존 스피어스 이동 (도보 10분)</div>
+                <div class="activity">🚙 이동 10분</div>
             </div>
-            <div class="timeline-item" onclick="openFromTimeline('amazon', this)">
+            
+            <div class="timeline-item" onclick="openModal('traffic_amazon')" style="cursor: pointer; background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);">
                 <div class="time">15:00 - 15:25</div>
-                <div class="activity">아마존 스피어스 외부 관람 & 사진</div>
+                <div class="activity" style="font-weight: 800; font-size: 1.1em;">④ 🌿 아마존 스피어스 (25분) 👉 교통정보</div>
             </div>
+            
             <div class="timeline-item">
                 <div class="time">15:25 - 15:40</div>
-                <div class="activity">아마존 스피어스 → 케리 공원 이동 (차량, 15분)</div>
+                <div class="activity">🚙 이동 15분 (오르막)</div>
             </div>
-            <div class="timeline-item" onclick="openFromTimeline('kerry', this)">
+            
+            <div class="timeline-item" onclick="openModal('traffic_kerry')" style="cursor: pointer; background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
                 <div class="time">15:40 - 16:30</div>
-                <div class="activity">⭐ 케리 공원 - 일몰 전 전망 & 단체 사진</div>
+                <div class="activity" style="font-weight: 800; font-size: 1.1em;">⑤ ⭐ 케리 공원 (50분) 👉 교통정보</div>
             </div>
+
+            <div class="timeline-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border: 3px solid #ff6b9d;">
+                <div class="time" style="background: rgba(255,255,255,0.3); font-weight: 700;">16:25</div>
+                <div class="activity" style="font-weight: 700;">🚗 드롭오프 픽업</div>
+            </div>
+            
             <div class="timeline-item">
                 <div class="time">16:30 - 16:45</div>
-                <div class="activity">케리 공원 → 가스 웍스 공원 이동 (차량, 15분)</div>
+                <div class="activity">🚙 이동 15분</div>
             </div>
-            <div class="timeline-item" onclick="openFromTimeline('gasworks', this)">
+            
+            <div class="timeline-item" onclick="openModal('traffic_gasworks')" style="cursor: pointer; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);">
                 <div class="time">16:45 - 17:15</div>
-                <div class="activity">가스 웍스 공원 산책 및 유니언 호수 전망</div>
+                <div class="activity" style="font-weight: 800; font-size: 1.1em;">⑥ 🏭 가스 웍스 공원 (30분) 👉 교통정보</div>
             </div>
+            
             <div class="timeline-item">
-                <div class="time">17:15 - 18:00</div>
-                <div class="activity">가스 웍스 공원 → 레돈도 숙소 귀환 (차량, 약 45분)</div>
+                <div class="time">17:15 - 18:30</div>
+                <div class="activity">🚙 귀환 75분 (퇴근시간 정체)</div>
             </div>
-            <div class="timeline-item">
-                <div class="time">18:00</div>
-                <div class="activity">🏠 숙소 도착 - 저녁 교제</div>
+            
+            <div class="timeline-item" style="background: linear-gradient(135deg, #a8e6cf 0%, #7ec8a3 100%); border: 4px solid #56ab91;">
+                <div class="time" style="background: rgba(255,255,255,0.3); font-weight: 700;">18:30</div>
+                <div class="activity" style="font-weight: 800; font-size: 1.1em; color: #2d5f3f;">🏠 숙소 도착</div>
             </div>
-            <div style="margin-top: 25px; padding: 20px; background: linear-gradient(120deg, #a8e6cf 0%, #7ec8a3 100%); border-radius: 12px; border-left: 5px solid #56ab91;">
-                <p style="font-weight: bold; color: #2d5f3f; font-size: 1.1em; margin-bottom: 10px;">🏠 레돈도 숙소 (3박 4일)</p>
+
+            <div onclick="openModal('accommodation_detail')" style="margin-top: 25px; padding: 20px; background: linear-gradient(120deg, #a8e6cf 0%, #7ec8a3 100%); border-radius: 12px; border-left: 5px solid #56ab91; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(86,171,145,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                <p style="font-weight: bold; color: #2d5f3f; font-size: 1.2em; margin-bottom: 10px;">🏠 레돈도 숙소 (3박 4일) 👉 클릭하여 상세정보 보기</p>
                 <p style="color: #2d5f3f; margin-bottom: 5px;">
-                    <strong>출발:</strong> 오전 9:30 AM
+                    <strong>주소:</strong> 28736 Redondo Beach Dr S, Des Moines, WA 98198
                 </p>
                 <p style="color: #2d5f3f; margin-bottom: 5px;">
-                    <strong>귀환:</strong> 오후 6:00 PM
+                    <strong>출발:</strong> 오전 9:30 | <strong>귀환:</strong> 오후 6:30
                 </p>
-                <p style="color: #2d5f3f;">
-                    <strong>숙소 링크:</strong> <a href="https://www.airbnb.com/rooms/25228010" target="_blank" style="color: #1a3a2e; font-weight: 600; text-decoration: underline;">Airbnb 숙소 보기</a>
+                <p style="color: #2d5f3f; font-size: 0.95em; margin-top: 8px; opacity: 0.9;">
+                    📱 클릭 시: Airbnb 링크, 상세 일정, 저녁 활동 정보
                 </p>
             </div>
         </section>
-
         <section class="destinations-section">
             <h2>✨ 관광 명소 둘러보기</h2>
             <p class="subtitle">카드를 클릭하여 상세 정보 확인</p>
@@ -613,42 +661,42 @@
                 </div>
 
                 <div class="destination-card" onclick="openModal('snoqualmie')">
-                    <span class="card-time">11:20</span>
+                    <span class="card-time">10:20</span>
                     <span class="card-icon">💧</span>
                     <div class="card-title">스노퀄미 폭포</div>
                     <div class="card-subtitle">268피트 높이의 장엄함</div>
                 </div>
 
                 <div class="destination-card" onclick="openModal('buffet')">
-                    <span class="card-time">12:15</span>
+                    <span class="card-time">11:45</span>
                     <span class="card-icon">🍽️</span>
                     <div class="card-title">Falls Buffet</div>
                     <div class="card-subtitle">풍성한 식탁, 함께하는 교제</div>
                 </div>
 
                 <div class="destination-card" onclick="openModal('pike')">
-                    <span class="card-time">14:35</span>
+                    <span class="card-time">13:35</span>
                     <span class="card-icon">🏪</span>
                     <div class="card-title">파이크 플레이스</div>
                     <div class="card-subtitle">시애틀의 심장 & 스타벅스 1호점</div>
                 </div>
 
                 <div class="destination-card" onclick="openModal('amazon')">
-                    <span class="card-time">16:00</span>
+                    <span class="card-time">15:00</span>
                     <span class="card-icon">🌿</span>
                     <div class="card-title">아마존 스피어스</div>
                     <div class="card-subtitle">도심 속 열대 우림</div>
                 </div>
 
                 <div class="destination-card golden" onclick="openModal('kerry')">
-                    <span class="card-time">16:40 ⭐</span>
+                    <span class="card-time">15:40 ⭐</span>
                     <span class="card-icon">🌉</span>
                     <div class="card-title">케리 공원</div>
                     <div class="card-subtitle">Golden Hour! 시애틀의 엽서 풍경</div>
                 </div>
 
                 <div class="destination-card" onclick="openModal('gasworks')">
-                    <span class="card-time">17:35</span>
+                    <span class="card-time">16:45</span>
                     <span class="card-icon">🏭</span>
                     <div class="card-title">가스 웍스 공원</div>
                     <div class="card-subtitle">산업 유산의 아름다운 변신</div>
@@ -1072,29 +1120,95 @@
                     <span class="close" onclick="closeModal('buffetModal')">×</span>
                     <span class="icon">🍽️</span>
                     <h2>Falls Buffet</h2>
-                    <p class="subtitle">풍성한 식탁, 함께 나누는 교제</p>
-                <div class="modal-footer">
-                    <button class="close-button" onclick="closeModal('buffetModal')">닫기</button>
+                    <p class="subtitle">풍성한 식탁과 Snoqualmie 부족의 부활 이야기</p>
                 </div>
-            </div>
                 <div class="modal-body">
                     <div class="modal-section">
-                        <h3>📍 레스토랑 정보</h3>
-                        <p>스노퀄미 리조트 내 뷔페 레스토랑으로, 다양한 국제 요리를 합리적인 가격에 즐길 수 있습니다.</p>
-                        <ul>
-                            <li><strong>위치:</strong> Snoqualmie Ridge (폭포에서 차로 10분)</li>
-                            <li><strong>전화:</strong> (425) 888-1234</li>
-                            <li><strong>가격:</strong> 런치 뷔페 $29/인</li>
+                        <h3>📍 위치와 소개</h3>
+                        <p>
+                            <strong>Falls Buffet</strong>은 Snoqualmie Casino 내에 위치한 메인 레스토랑입니다. 
+                            스노퀄미 폭포에서 차로 단 10분 거리에 있으며, 
+                            다양한 국제 요리를 합리적인 가격에 무제한으로 즐길 수 있습니다.
+                        </p>
+                        <ul style="margin-top: 10px;">
+                            <li><strong>주소:</strong> 37500 SE North Bend Way, Snoqualmie, WA 98065</li>
+                            <li><strong>가격:</strong> 런치 뷔페 약 $25-30/인</li>
+                            <li><strong>메뉴:</strong> 아시안, 이탈리안, 아메리칸, 시푸드, 디저트 바</li>
                         </ul>
-                        <p style="margin-top: 15px;"><strong>🍴 메뉴:</strong> 아시안, 이탈리안, 아메리칸, 디저트 바, 음료 포함</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🏛️ Snoqualmie 부족의 땅</h3>
+                        <p>
+                            이 카지노와 레스토랑은 단순한 상업 시설이 아닙니다. 
+                            <strong>Snoqualmie 부족(Sdukalbixw 사람들)</strong>이 소유하고 운영하는 
+                            자치권과 경제적 독립의 상징입니다.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            "Snoqualmie"는 원주민 언어로 <strong>"달의 사람들(Moon People)"</strong>이라는 뜻입니다. 
+                            이들은 수천 년간 이 지역에 살아왔으며, 스노퀄미 폭포를 신성한 기도처로 여겼습니다.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>📜 74년간의 인내, 그리고 부활</h3>
+                        <p><strong>1850년대:</strong> 백인 정착민들이 들어오면서 Snoqualmie 부족은 대부분의 땅을 빼앗겼습니다.</p>
+                        <p><strong>1919년:</strong> 연방 정부가 Snoqualmie 부족의 공식 인정을 <strong>취소</strong>했습니다. 
+                        법적으로 "존재하지 않는" 부족이 된 것입니다.</p>
+                        <p><strong>1919-1999년:</strong> 74년간 부족원들은 억압과 차별 속에서도 정체성을 지키며 투쟁했습니다.</p>
+                        <p><strong>1999년:</strong> 마침내 연방 정부가 Snoqualmie 부족을 <strong>다시 공식 인정</strong>했습니다!</p>
+                        <p><strong>2008년:</strong> <strong>Snoqualmie Casino</strong> 개장. 부족이 경제적 자립을 달성한 역사적 순간입니다.</p>
+                        <p style="margin-top: 15px; padding: 15px; background: #e8f5e9; border-radius: 8px; font-style: italic;">
+                            74년의 인내 끝에 부활한 이 이야기는 희망과 끈기의 교훈을 줍니다.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🌲 현재의 Snoqualmie 부족</h3>
+                        <p>약 <strong>650명의 등록 부족원</strong>이 있으며, 카지노 수익으로 다음을 운영합니다:</p>
+                        <ul style="margin-top: 10px;">
+                            <li><strong>자체 정부</strong> - 부족 의회, 법원, 경찰</li>
+                            <li><strong>교육 프로그램</strong> - 장학금, 언어 보존</li>
+                            <li><strong>의료 서비스</strong> - 부족원 건강 관리</li>
+                            <li><strong>주택 지원</strong> - 부족원 주거 안정</li>
+                            <li><strong>연어 복원 프로젝트</strong> - 환경 보호</li>
+                        </ul>
+                        <p style="margin-top: 10px; color: #00695c; font-weight: 600;">
+                            💡 우리가 지불하는 식사 비용은 부족의 자립과 문화 보존에 사용됩니다!
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>👤 Chief Seattle (시애틀 추장)</h3>
+                        <p>
+                            워싱턴 주 원주민 역사에서 가장 유명한 인물은 <strong>Chief Seattle (1786-1866)</strong>입니다. 
+                            Duwamish/Suquamish 부족의 추장으로, <strong>시애틀 시의 이름이 그의 이름에서 유래</strong>했습니다.
+                        </p>
+                        <p style="margin-top: 10px; font-style: italic; color: #667eea;">
+                            "땅을 어떻게 사고팔 수 있는가? 신선한 공기와 반짝이는 물을 우리가 소유하지도 않는데 
+                            어떻게 그것을 팔 수 있는가?" - Chief Seattle의 유명한 연설 중
+                        </p>
+                        <p style="margin-top: 10px;">
+                            그는 평화적 공존을 추구했으며, 원주민과 백인 정착민 사이의 가교 역할을 했습니다.
+                        </p>
+                        <a href="https://www.youtube.com/results?search_query=Chief+Seattle+speech" target="_blank" class="youtube-button">Chief Seattle 연설 영상</a>
+                    </div>
+
+                    <div class="modal-section" style="background: #fff3e0; padding: 15px; border-radius: 10px;">
+                        <h3>⚠️ 화장실 골든타임!</h3>
+                        <p style="color: #e65100; font-weight: 700; font-size: 1.1em;">⏰ 12:40 - 출발 전 필수 이용!</p>
+                        <p>시내로 가는 길에 막히면 다음 화장실까지 50분 소요</p>
+                        <p><strong>전원 이용 필수!</strong></p>
                     </div>
 
                     <div class="tips-box">
                         <h4>💡 가이드 팁</h4>
                         <ul>
-                            <li><strong>예약:</strong> 단체 예약 권장</li>
-                            <li><strong>시간:</strong> 90분 여유롭게</li>
-                            <li><strong>주차:</strong> 리조트 무료 주차장</li>
+                            <li><strong>체류:</strong> 60분 (11:45-12:45)</li>
+                            <li><strong>주차:</strong> Casino Garage (주차타워)</li>
+                            <li><strong>메뉴:</strong> 무제한 뷔페 (다양한 선택)</li>
+                            <li><strong>화장실:</strong> 12:40 전원 이용 필수!</li>
+                            <li><strong>의미:</strong> Snoqualmie 부족의 땅에서 식사</li>
                         </ul>
                     </div>
                 </div>
@@ -1115,31 +1229,100 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-section">
-                        <h3>📍 파이크 플레이스 마켓</h3>
-                        <p>1907년 개장한 미국에서 가장 오래된 공공 시장 중 하나. 120년 역사를 자랑하며 매년 천만 명이 방문합니다.</p>
-                        <p><strong>꼭 봐야 할 명소:</strong></p>
-                        <ul>
-                            <li>생선 던지기 쇼 (Pike Place Fish Market)</li>
-                            <li>레이첼 돼지 저금통 (시장 입구)</li>
-                            <li>스타벅스 1호점 (1971년 원조)</li>
-                            <li>형형색색 꽃가게들</li>
-                        </ul>
-                        <a href="https://www.youtube.com/results?search_query=Pike+Place+Market+Seattle+tour" target="_blank" class="youtube-button">마켓 투어 영상 보기</a>
+                        <h3>📍 위치와 역사</h3>
+                        <p>
+                            파이크 플레이스 마켓(Pike Place Market)은 1907년 8월 17일, 단 8명의 농부와 마차 한 대로 시작되었습니다. 
+                            당시 시애틀은 농산물 가격 폭등으로 시민들이 고통받고 있었고, 중개상들이 부당 이익을 취하고 있었습니다.
+                        </p>
+                        <p>
+                            <strong>시의원 Arthur Goodwin의 제안:</strong> "농부들이 직접 소비자에게 판매할 수 있는 공공 시장을 만들자!" 
+                            첫날, 1만 명의 시민이 몰려들었고, 농산물은 정오가 되기 전에 완판되었습니다. 
+                            이것이 미국에서 가장 오래 지속적으로 운영된 농산물 시장의 시작이었습니다.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            현재 200개 이상의 가게, 500여 명의 장인과 농부가 활동하며, 연간 1,000만 명이 방문합니다.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🏛️ 위기와 부활</h3>
+                        <p>
+                            <strong>1960년대 위기:</strong> 시애틀시는 마켓을 철거하고 그 자리에 주차 빌딩과 호텔을 짓기로 결정했습니다. 
+                            낡고 비효율적이라는 이유였습니다.
+                        </p>
+                        <p>
+                            하지만 <strong>Victor Steinbrueck 교수</strong>(워싱턴 대학 건축학)와 시민들이 "Friends of the Market" 운동을 시작했습니다. 
+                            1971년 시민투표 결과, 76,369표 대 53,264표로 시장 보존이 결정되었습니다!
+                        </p>
+                        <p style="margin-top: 10px; font-style: italic; color: #667eea;">
+                            "효율성보다 중요한 것은 영혼입니다" - Victor Steinbrueck
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🐷 레이첼 돼지 (Rachel the Pig)</h3>
+                        <p>
+                            시장 입구의 돼지 저금통 'Rachel'은 1986년부터 시장의 마스코트입니다. 
+                            조지아 거번(Georgia Gerber)이 제작한 550파운드 청동 조각상으로, 
+                            실제 농장의 돼지를 모델로 만들어졌습니다.
+                        </p>
+                        <p>
+                            방문객들이 넣은 모든 동전은 <strong>저소득층 의료 지원 기금</strong>으로 사용됩니다. 
+                            연간 약 $25,000가 모이며, 1986년 이후 총 $250,000 이상이 모금되었습니다!
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🐟 파이크 플레이스 생선 시장</h3>
+                        <p>
+                            <strong>"Fish Throwing" 퍼포먼스:</strong> 1986년 직원 Johnny Yokoyama가 시작한 전통. 
+                            손님이 생선을 주문하면, 직원들이 큰 소리로 주문을 외치며 생선을 공중으로 던집니다!
+                        </p>
+                        <p>
+                            이 퍼포먼스는 단순한 쇼가 아닙니다. "일을 즐기자"는 철학에서 시작되었고, 
+                            이후 경영 서적 <strong>"FISH! Philosophy"</strong>로 출판되어 전 세계 기업들의 교육 자료가 되었습니다.
+                        </p>
+                        <a href="https://www.youtube.com/results?search_query=Pike+Place+Fish+Market+throwing" target="_blank" class="youtube-button">생선 던지기 영상</a>
                     </div>
 
                     <div class="modal-section">
                         <h3>☕ 스타벅스 1호점</h3>
-                        <p>1971년 3월 30일 문을 연 세계 최초 매장. 갈색 바탕 원조 로고와 1970년대 분위기 그대로!</p>
-                        <a href="https://www.youtube.com/results?search_query=Starbucks+original+first+store" target="_blank" class="youtube-button">스타벅스 1호점 영상</a>
+                        <p>
+                            <strong>1971년 3월 30일 개장</strong> - 세 명의 친구 Jerry Baldwin, Zev Siegl, Gordon Bowker가 
+                            "좋은 커피에 대한 열정"으로 시작한 작은 가게.
+                        </p>
+                        <p>
+                            초기에는 커피 원두만 팔았고, 지금처럼 음료를 만들어 주지 않았습니다. 
+                            1987년 Howard Schultz가 인수하면서 지금의 스타벅스로 변모했습니다.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            <strong>원조 로고:</strong> 갈색 바탕에 그려진 세이렌(Siren, 그리스 신화의 바다 요정). 
+                            현대 초록색 로고와 달리 원래 모습 그대로입니다!
+                        </p>
+                        <a href="https://www.youtube.com/results?search_query=Starbucks+original+first+store+Pike+Place" target="_blank" class="youtube-button">스타벅스 1호점 영상</a>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🎭 숨은 보석: 검벽 (The Gum Wall)</h3>
+                        <p>
+                            마켓 극장(Market Theater) 뒤 골목 Post Alley에는 세계에서 가장 독특한 명소 중 하나인 
+                            <strong>"검벽(Gum Wall)"</strong>이 있습니다.
+                        </p>
+                        <p>
+                            1990년대 초, 극장 줄을 서던 사람들이 벽에 껌을 붙이기 시작했고, 
+                            지금은 50피트 길이의 벽 전체가 알록달록한 껌으로 뒤덮여 있습니다. 
+                            특이하지만 시애틀의 독특한 문화를 보여주는 장소입니다.
+                        </p>
                     </div>
 
                     <div class="tips-box">
                         <h4>💡 가이드 팁</h4>
                         <ul>
-                            <li><strong>체류:</strong> 75분</li>
-                            <li><strong>주차:</strong> Pike Place Market Garage</li>
-                            <li><strong>스타벅스:</strong> 긴 줄 예상, 사진만도 OK</li>
-                            <li><strong>동선:</strong> 레이첼 돼지 → 생선 → 스타벅스</li>
+                            <li><strong>체류:</strong> 75분 (13:35 - 14:50)</li>
+                            <li><strong>주차:</strong> Public Market Garage (Western Ave 입구)</li>
+                            <li><strong>필수 코스:</strong> 레이첼 돼지 → 생선시장 → 스타벅스 1호점</li>
+                            <li><strong>스타벅스:</strong> 긴 줄 예상 (외부 사진만도 OK)</li>
+                            <li><strong>화장실:</strong> 14:50 집결 전 꼭 이용!</li>
                         </ul>
                     </div>
                 </div>
@@ -1160,19 +1343,91 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-section">
-                        <h3>📍 위치와 특징</h3>
-                        <p>2018년 완공된 세 개의 거대한 유리 돔. 4만 종의 식물이 자라는 도심 속 정글입니다. 높이 95피트, 2,643개의 유리 패널로 이루어진 건축의 경이!</p>
-                        <p style="color: #d63031; font-weight: 600; margin-top: 15px;">※ 2월 4일(수)은 평일이므로 외부 관람만 가능</p>
-                        <a href="https://www.youtube.com/results?search_query=Amazon+Spheres+Seattle" target="_blank" class="youtube-button">아마존 스피어스 영상</a>
+                        <h3>📍 위치와 건축</h3>
+                        <p>
+                            <strong>아마존 스피어스(Amazon Spheres)</strong>는 2018년 1월 개관한 아마존 본사의 혁신적인 건축물입니다. 
+                            시애틀 다운타운 7th Avenue와 Lenora Street 교차로에 위치한 세 개의 거대한 유리 돔으로, 
+                            높이 95피트(약 29미터), 총 면적 65,000 평방피트에 달합니다.
+                        </p>
+                        <p>
+                            2,643개의 유리 패널로 구성되어 있으며, <strong>모든 패널이 서로 다른 크기와 곡률</strong>을 가지고 있습니다. 
+                            이는 건축적으로 엄청난 도전이었으며, 총 건설 비용은 약 $4억 달러로 추정됩니다.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🌱 4만 종의 식물 정글</h3>
+                        <p>
+                            <strong>50여 개국에서 수집한 40,000 종의 식물</strong>이 자라고 있으며, 
+                            이는 열대우림 환경을 재현하기 위해 세계 각지에서 공수되었습니다. 
+                            가장 큰 나무는 55피트 높이의 <strong>Ficus rubiginosa (루비 나무)</strong>로, 
+                            캘리포니아에서 특수 트럭으로 운송되었습니다.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            내부는 항상 온도 72°F(22°C), 습도 60%로 유지되며, 
+                            펜타곤 모양의 육각형 유리 패널들이 자연광을 최대한 들이면서도 온도를 조절합니다.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>💡 Jeff Bezos의 비전</h3>
+                        <p>
+                            아마존 창업자 <strong>Jeff Bezos</strong>는 "직원들이 자연과 연결될 때 가장 창의적이다"라는 믿음으로 
+                            이 프로젝트를 시작했습니다. 전통적인 사무실 대신, 식물이 가득한 공간에서 회의하고 일하도록 설계되었습니다.
+                        </p>
+                        <p style="margin-top: 10px; font-style: italic; color: #00695c;">
+                            "우리는 단순한 건물이 아닌, 사람과 자연이 공존하는 공간을 만들고 싶었습니다" - John Schoettler (아마존 부동산 책임자)
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🏗️ 설계와 건설 과정</h3>
+                        <p>
+                            설계는 <strong>NBBJ</strong> (시애틀의 세계적 건축 회사)가 담당했으며, 
+                            일본의 전통 유리 기술과 현대 공학을 결합했습니다. 
+                            각 유리 패널은 개별적으로 설계되고 제작되어야 했기 때문에, 
+                            <strong>디지털 모델링과 3D 프린팅</strong>을 광범위하게 사용했습니다.
+                        </p>
+                        <p>
+                            건설 기간은 3년 반(2014-2018)이 걸렸으며, 
+                            가장 큰 도전은 식물을 위한 완벽한 환경을 만드는 것이었습니다.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🌿 Living Wall (살아있는 벽)</h3>
+                        <p>
+                            스피어스 내부에는 높이 60피트의 <strong>Living Wall</strong>이 있습니다. 
+                            25,000개 이상의 식물이 수직으로 자라는 벽으로, 
+                            원예사들이 로프를 타고 올라가 매주 관리합니다!
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🎯 지속 가능성</h3>
+                        <p>
+                            스피어스는 <strong>LEED Gold 인증</strong>을 받았습니다. 
+                            빗물 재활용 시스템, 에너지 효율적인 냉난방, 
+                            그리고 재활용 강철 사용 등 친환경 기술이 적용되었습니다.
+                        </p>
+                        <a href="https://www.youtube.com/results?search_query=Amazon+Spheres+inside+tour" target="_blank" class="youtube-button">스피어스 내부 투어 영상</a>
+                    </div>
+
+                    <div class="modal-section" style="background: #ffebee; padding: 15px; border-radius: 10px;">
+                        <h3>⚠️ 방문 안내</h3>
+                        <p style="color: #c62828; font-weight: 700;">2월 4일(수)은 평일이므로 내부 입장 불가</p>
+                        <p style="margin-top: 10px;">스피어스는 아마존 직원 전용 공간이며, 일반인은 주말(토 10AM-6PM, 일 11AM-5PM)에만 
+                        사전 예약 후 방문 가능합니다. 우리는 외부에서 건축물과 사진 촬영을 즐길 예정입니다.</p>
                     </div>
 
                     <div class="tips-box">
                         <h4>💡 가이드 팁</h4>
                         <ul>
-                            <li><strong>체류:</strong> 25분</li>
-                            <li><strong>위치:</strong> 파이크 플레이스서 도보 10분</li>
-                            <li><strong>사진:</strong> 7th Ave & Lenora St 교차로</li>
-                            <li><strong>시간:</strong> 오후 4시경 (햇빛 좋음)</li>
+                            <li><strong>체류:</strong> 25분 (15:00 - 15:25)</li>
+                            <li><strong>위치:</strong> 파이크 플레이스서 도보/차량 10분</li>
+                            <li><strong>사진 포인트:</strong> 7th Ave & Lenora St 교차로</li>
+                            <li><strong>시간:</strong> 오후 3시경 (햇빛 좋음)</li>
+                            <li><strong>주차:</strong> 잠시 정차 또는 차창 관광</li>
                         </ul>
                     </div>
                 </div>
@@ -1192,13 +1447,39 @@
                     <p class="subtitle">시애틀의 엽서 같은 풍경</p>
                 </div>
                 <div class="modal-body">
+                    <div class="modal-section">
+                        <h3>📍 위치와 역사</h3>
+                        <p>
+                            <strong>케리 공원(Kerry Park)</strong>은 Queen Anne Hill 정상(해발 456피트)에 위치한 1.26에이커의 작은 공원입니다. 
+                            1927년, 부유한 사업가 부부 <strong>Albert Sperry Kerry와 Katherine Kerry</strong>가 시애틀 시에 기증했습니다.
+                        </p>
+                        <p>
+                            Kerry 부부는 "이 아름다운 전망을 모든 시민과 나누고 싶다"는 마음으로 조건 없이 토지를 헌납했습니다. 
+                            시애틀에서 가장 사진이 많이 찍히는 장소로, 연간 수백만 명이 방문합니다.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🏗️ 스페이스 니들 이야기</h3>
+                        <p>
+                            <strong>1962년 세계박람회</strong>를 위해 건설된 605피트(184m) 높이의 타워. 
+                            건축가 John Graham Jr.는 "UFO가 착륙하는 모습"을 상상하며 설계했습니다.
+                        </p>
+                        <p>
+                            건설 기간 단 <strong>400일</strong>. 당시 "불가능하다"는 말을 들었지만, 
+                            하루 평균 1.5피트씩 올라가며 마침내 완성했습니다. 
+                            현재까지 60년 이상 시애틀의 상징으로 자리잡고 있습니다.
+                        </p>
+                        <a href="https://www.youtube.com/results?search_query=Space+Needle+construction+history" target="_blank" class="youtube-button">스페이스 니들 역사 영상</a>
+                    </div>
+
                     <div class="highlight-box">
                         <h4>🌅 Golden Hour - 완벽한 타이밍!</h4>
                         <p><strong>2월 4일 일몰: 5:10 PM</strong></p>
                         <ul>
                             <li><strong>Golden Hour:</strong> 4:10-5:10 PM</li>
-                            <li><strong>우리 도착:</strong> 4:40 PM ⭐</li>
-                            <li><strong>사진 촬영:</strong> 4:40-5:10 PM (황금빛!)</li>
+                            <li><strong>우리 도착:</strong> 3:40 PM (15:40) ⭐</li>
+                            <li><strong>사진 촬영:</strong> 3:40-5:10 PM (황금빛!)</li>
                             <li><strong>Blue Hour:</strong> 5:10-5:30 PM (도시 불빛)</li>
                         </ul>
                     </div>
@@ -1207,22 +1488,32 @@
                         <h3>📍 완벽한 전망</h3>
                         <p>시애틀에서 가장 유명한 사진 촬영 명소. 한 프레임에 담기는 것들:</p>
                         <ul>
-                            <li>스페이스 니들 (중앙에 우뚝)</li>
-                            <li>다운타운 스카이라인</li>
-                            <li>엘리엇 베이 (반짝이는 바다)</li>
-                            <li>레이니어 산 (맑은 날)</li>
+                            <li><strong>스페이스 니들</strong> - 중앙에 우뚝 (605피트)</li>
+                            <li><strong>다운타운 스카이라인</strong> - 고층 빌딩들</li>
+                            <li><strong>엘리엇 베이</strong> - 반짝이는 바다 (Puget Sound)</li>
+                            <li><strong>레이니어 산</strong> - 맑은 날 배경에 (14,411피트)</li>
                         </ul>
                         <a href="https://www.youtube.com/results?search_query=Kerry+Park+Seattle+sunset+golden+hour" target="_blank" class="youtube-button">케리 공원 일몰 영상</a>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>📷 사진 촬영 팁</h3>
+                        <p><strong>최고의 포인트:</strong> 공원 서쪽 벤치 앞 난간</p>
+                        <p><strong>구도:</strong> 스페이스 니들을 중앙에, 다운타운을 오른쪽에 배치</p>
+                        <p><strong>시간:</strong> 우리 도착 시간(3:40 PM)이 Golden Hour 시작 30분 후로 완벽!</p>
+                        <p style="margin-top: 10px; color: #e65100; font-weight: 600;">
+                            💡 단체 사진은 먼저 찍고, 개인 사진은 일몰 가까워질수록 더 아름답습니다!
+                        </p>
                     </div>
 
                     <div class="tips-box">
                         <h4>💡 가이드 팁</h4>
                         <ul>
-                            <li><strong>체류:</strong> 40분 (4:40-5:20 PM)</li>
+                            <li><strong>체류:</strong> 50분 (15:40-16:30)</li>
                             <li><strong>일몰:</strong> 5:10 PM 감동의 순간!</li>
-                            <li><strong>복장:</strong> 따뜻한 재킷 필수</li>
-                            <li><strong>주차:</strong> 노상 주차 (혼잡 예상)</li>
-                            <li><strong>사진:</strong> 단체 + 개인 충분히</li>
+                            <li><strong>복장:</strong> 따뜻한 재킷 필수 (언덕 정상, 바람)</li>
+                            <li><strong>주차:</strong> 드롭오프 작전 (주차 매우 혼잡)</li>
+                            <li><strong>사진:</strong> 단체 → 개인 순서 추천</li>
                         </ul>
                     </div>
                 </div>
@@ -1244,19 +1535,71 @@
                 <div class="modal-body">
                     <div class="modal-section">
                         <h3>📍 위치와 역사</h3>
-                        <p>유니언 호수 북단에 위치한 20.5에이커 규모의 공원. 1906-1956년 가동되었던 석탄 가스화 공장의 산업 구조물들이 그대로 보존되어 있는 독특한 공원입니다.</p>
-                        <p>과거의 산업 시설이 현재의 예술 작품이자 휴식 공간으로 재탄생한 '도시 재생'의 훌륭한 사례입니다.</p>
-                        <a href="https://www.youtube.com/results?search_query=Gas+Works+Park+Seattle" target="_blank" class="youtube-button">가스 웍스 공원 영상</a>
+                        <p>
+                            <strong>가스 웍스 공원(Gas Works Park)</strong>은 유니언 호수(Lake Union) 북단에 위치한 20.5에이커 규모의 공원입니다. 
+                            1906년부터 1956년까지 50년간 <strong>Seattle Gas Light Company</strong>의 석탄 가스화 공장으로 운영되었으며, 
+                            시애틀에 가스를 공급하는 핵심 시설이었습니다.
+                        </p>
+                        <p>
+                            1956년 천연가스 시대가 오면서 공장은 문을 닫았고, 시는 이를 철거하려 했습니다. 
+                            하지만 조경가 <strong>Richard Haag</strong>가 혁명적 제안을 합니다: 
+                            "과거의 산업 구조물을 예술 작품으로 재탄생시키자!"
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🎨 Richard Haag의 비전</h3>
+                        <p>
+                            <strong>Richard Haag (1923-2018)</strong>는 UC 버클리 교수이자 혁신적 조경가였습니다. 
+                            그는 12년간(1962-1975) 시의회를 설득하여 마침내 1975년 세계 최초의 <strong>'산업 고고학 공원'</strong>을 탄생시켰습니다.
+                        </p>
+                        <p style="margin-top: 10px; font-style: italic; color: #667eea;">
+                            "과거를 지우는 것이 아니라, 과거와 현재가 공존하는 공간을 만들고 싶었습니다" - Richard Haag
+                        </p>
+                        <p style="margin-top: 10px;">
+                            오염된 토양을 정화하고, 녹슨 기계는 예술 조각으로, 낡은 보일러는 아이들의 놀이터로 변신시켰습니다. 
+                            이 프로젝트는 전 세계 도시 재생의 모델이 되었습니다.
+                        </p>
+                        <a href="https://www.youtube.com/results?search_query=Gas+Works+Park+history+transformation" target="_blank" class="youtube-button">가스 웍스 변신 영상</a>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🏔️ Great Mound (대언덕)</h3>
+                        <p>
+                            공원의 상징인 <strong>40피트 높이 언덕</strong>은 공장 잔해와 흙을 섞어 만든 인공 구조물입니다. 
+                            정상에 오르면 유니언 호수 전체와 시애틀 다운타운, 그리고 스페이스 니들이 한눈에 보입니다.
+                        </p>
+                        <p>
+                            연날리기와 피크닉의 명소이며, 7월 4일 독립기념일에는 수만 명이 모여 불꽃놀이를 감상합니다.
+                        </p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🏭 보존된 구조물</h3>
+                        <p><strong>Exhaust Stack (굴뚝)</strong> - 130피트 높이, 공원의 랜드마크</p>
+                        <p><strong>Boiler House (보일러실)</strong> - 현재는 예술적 조형물</p>
+                        <p><strong>Compressor Building (압축기 건물)</strong> - 대관 가능한 피크닉 쉘터</p>
+                        <p style="margin-top: 10px; color: #00695c; font-weight: 600;">
+                            💡 밤에는 조명이 켜져 환상적인 분위기를 연출합니다!
+                        </p>
+                    </div>
+
+                    <div class="modal-section" style="background: #fff3e0; padding: 15px; border-radius: 10px;">
+                        <h3>⚠️ 주의사항</h3>
+                        <p><strong>시간:</strong> 저녁 시간대 (16:45-17:15) 방문</p>
+                        <p><strong>안전:</strong> 18명이 함께 밝은 곳에서 활동</p>
+                        <p><strong>잔디:</strong> 거위 배설물 주의 - 포장도로 이용 권장</p>
+                        <p><strong>화장실:</strong> 공원 내 시설 있음 ✅</p>
                     </div>
 
                     <div class="tips-box">
                         <h4>💡 가이드 팁</h4>
                         <ul>
-                            <li><strong>체류:</strong> 25분</li>
-                            <li><strong>시간:</strong> 저녁 5:35 PM (어스름)</li>
-                            <li><strong>활동:</strong> 언덕 올라 유니언 호수 전망</li>
-                            <li><strong>주차:</strong> 공원 입구 (무료)</li>
-                            <li><strong>분위기:</strong> 하루 마무리 차분한 산책</li>
+                            <li><strong>체류:</strong> 30분 (16:45-17:15)</li>
+                            <li><strong>시간:</strong> 해질녘 (어스름한 분위기)</li>
+                            <li><strong>활동:</strong> Great Mound 올라 전망 감상</li>
+                            <li><strong>주차:</strong> 공원 입구 무료 주차장</li>
+                            <li><strong>의미:</strong> 하루 여정의 차분한 마무리</li>
                         </ul>
                     </div>
                 </div>
@@ -1329,13 +1672,26 @@
 
     <script>
         function openModal(modalId) {
-            document.getElementById(modalId + 'Modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            // 교통 정보 모달인 경우 그대로 사용
+            let modal = document.getElementById(modalId);
+            
+            // 기존 모달인 경우 'Modal' 추가
+            if (!modal) {
+                modal = document.getElementById(modalId + 'Modal');
+            }
+            
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto';
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
 
         function closeModalOnOutside(event, modalId) {
@@ -1547,5 +1903,300 @@
             if (footerPs[1]) footerPs[1].textContent = t.footer2;
         }
     </script>
+        <!-- 교통 정보 모달들 -->
+        
+        <!-- 스노퀄미 폭포 교통 정보 -->
+        <div id="traffic_snoqualmie" class="modal" onclick="closeModalOnOutside(event, 'traffic_snoqualmie')">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);">
+                    <span class="close" onclick="closeModal('traffic_snoqualmie')">×</span>
+                    <h2>💧 스노퀄미 폭포 - 교통 정보</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section" style="background: #e3f2fd; padding: 15px; border-radius: 10px;">
+                        <h3>📍 주소</h3>
+                        <p style="font-size: 1.1em; margin-bottom: 10px;">
+                            <a href="https://maps.google.com/?q=6501+Railroad+Ave,+Snoqualmie,+WA+98065" target="_blank" style="color: #1976d2; font-weight: 700; text-decoration: underline;">
+                                6501 Railroad Ave, Snoqualmie, WA 98065
+                            </a>
+                        </p>
+                        <p><strong>🕘 출발:</strong> 09:30 (레돈도 숙소)</p>
+                        <p><strong>🕙 도착:</strong> 10:20 (50분 소요, I-90 E)</p>
+                        <p><strong>⏱️ 체류:</strong> 10:20 - 11:30 (70분)</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🅿️ 주차 정보</h3>
+                        <p><strong>위치:</strong> Upper Lot (P1) - 무료</p>
+                        <p><strong>만차 시:</strong> 길 건너 Overflow Lot 이용</p>
+                        <p><strong>차량 3대:</strong> 같은 주차장에 주차</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🚻 화장실</h3>
+                        <p><strong>위치:</strong> 주차장 옆 기프트샵</p>
+                        <p style="color: #2e7d32; font-weight: 600;">✅ 도착 직후 이용 권장</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-button" onclick="closeModal('traffic_snoqualmie')">닫기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Falls Buffet 교통 정보 -->
+        <div id="traffic_buffet" class="modal" onclick="closeModalOnOutside(event, 'traffic_buffet')">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <span class="close" onclick="closeModal('traffic_buffet')">×</span>
+                    <h2>🍽️ Falls Buffet - 교통 정보</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section" style="background: #fff8e1; padding: 15px; border-radius: 10px;">
+                        <h3>📍 주소</h3>
+                        <p style="font-size: 1.1em; margin-bottom: 10px;">
+                            <a href="https://maps.google.com/?q=37500+SE+North+Bend+Way,+Snoqualmie,+WA+98065" target="_blank" style="color: #f57c00; font-weight: 700; text-decoration: underline;">
+                                37500 SE North Bend Way, Snoqualmie, WA 98065
+                            </a>
+                        </p>
+                        <p><strong>🕚 출발:</strong> 11:30 (스노퀄미 폭포)</p>
+                        <p><strong>🕚 도착:</strong> 11:40 (10분 소요)</p>
+                        <p><strong>⏱️ 식사:</strong> 11:45 - 12:45 (60분)</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🅿️ 주차 정보</h3>
+                        <p><strong>위치:</strong> Casino Garage (주차타워)</p>
+                        <p><strong>작전:</strong> 3대 모두 같은 층(예: 3층) 주차</p>
+                        <p><strong>선발대:</strong> 3호차가 먼저 내려 대기표/결제</p>
+                    </div>
+
+                    <div class="modal-section" style="background: #ffebee; padding: 15px; border-radius: 10px;">
+                        <h3>🚻 화장실 골든타임!</h3>
+                        <p style="color: #c62828; font-weight: 700; font-size: 1.1em;">⏰ 12:40 - 출발 전 필수!</p>
+                        <p>시내 가는 길 막히면 다음 화장실까지 50분</p>
+                        <p><strong>전원 이용 필수!</strong></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-button" onclick="closeModal('traffic_buffet')">닫기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 파이크 플레이스 교통 정보 -->
+        <div id="traffic_pike" class="modal" onclick="closeModalOnOutside(event, 'traffic_pike')">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);">
+                    <span class="close" onclick="closeModal('traffic_pike')">×</span>
+                    <h2>🏪 파이크 플레이스 - 교통 정보</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section" style="background: #fce4ec; padding: 15px; border-radius: 10px;">
+                        <h3>📍 주소</h3>
+                        <p style="font-size: 1.1em; margin-bottom: 10px;">
+                            <a href="https://maps.google.com/?q=1531+Western+Ave,+Seattle,+WA+98101" target="_blank" style="color: #c2185b; font-weight: 700; text-decoration: underline;">
+                                1531 Western Ave, Seattle, WA 98101 (Public Market Garage)
+                            </a>
+                        </p>
+                        <p><strong>🕐 출발:</strong> 12:45 (Falls Buffet)</p>
+                        <p><strong>🕐 도착:</strong> 13:35 (50분 소요, I-90 W)</p>
+                        <p><strong>⏱️ 체류:</strong> 13:35 - 14:50 (75분)</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🅿️ 주차 정보</h3>
+                        <p><strong>위치:</strong> Public Market Garage (지하 주차장)</p>
+                        <p><strong>입구:</strong> Western Ave & Pine St</p>
+                        <p><strong>차량:</strong> 3대 모두 진입 가능 (높이 제한 없음)</p>
+                    </div>
+
+                    <div class="modal-section" style="background: #e1f5fe; padding: 15px; border-radius: 10px;">
+                        <h3>🚻 화장실 & 집결</h3>
+                        <p style="color: #01579b; font-weight: 700;">⏰ 14:50 - 주차장 엘리베이터 앞 집결</p>
+                        <p><strong>화장실:</strong> 주차장 또는 시장 내부</p>
+                        <p>케리 공원에 화장실 없으므로 여기서 필수 이용!</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-button" onclick="closeModal('traffic_pike')">닫기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 아마존 스피어스 교통 정보 -->
+        <div id="traffic_amazon" class="modal" onclick="closeModalOnOutside(event, 'traffic_amazon')">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                    <span class="close" onclick="closeModal('traffic_amazon')">×</span>
+                    <h2>🌿 아마존 스피어스 - 교통 정보</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section" style="background: #e0f2f1; padding: 15px; border-radius: 10px;">
+                        <h3>📍 주소</h3>
+                        <p style="font-size: 1.1em; margin-bottom: 10px;">
+                            <a href="https://maps.google.com/?q=2111+7th+Ave,+Seattle,+WA+98121" target="_blank" style="color: #00695c; font-weight: 700; text-decoration: underline;">
+                                2111 7th Ave, Seattle, WA 98121
+                            </a>
+                        </p>
+                        <p><strong>🕑 출발:</strong> 14:50 (파이크 플레이스)</p>
+                        <p><strong>🕒 도착:</strong> 15:00 (10분 소요)</p>
+                        <p><strong>⏱️ 체류:</strong> 15:00 - 15:25 (25분)</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🅿️ 주차 정보</h3>
+                        <p><strong>주차 없음!</strong></p>
+                        <p><strong>작전:</strong> 잠시 정차 또는 차창 관광</p>
+                        <p>건물 앞에서 단체 사진만 빠르게 촬영</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🚻 화장실</h3>
+                        <p style="color: #d32f2f; font-weight: 700;">❌ 없음</p>
+                        <p>파이크 플레이스에서 이용 완료 상태</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-button" onclick="closeModal('traffic_amazon')">닫기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 케리 공원 교통 정보 -->
+        <div id="traffic_kerry" class="modal" onclick="closeModalOnOutside(event, 'traffic_kerry')">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);">
+                    <span class="close" onclick="closeModal('traffic_kerry')">×</span>
+                    <h2>⭐ 케리 공원 - 교통 정보</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section" style="background: #fff3e0; padding: 15px; border-radius: 10px;">
+                        <h3>📍 주소</h3>
+                        <p style="font-size: 1.1em; margin-bottom: 10px;">
+                            <a href="https://maps.google.com/?q=211+W+Highland+Dr,+Seattle,+WA+98119" target="_blank" style="color: #e65100; font-weight: 700; text-decoration: underline;">
+                                211 W Highland Dr, Seattle, WA 98119
+                            </a>
+                        </p>
+                        <p><strong>🕒 출발:</strong> 15:25 (아마존 스피어스)</p>
+                        <p><strong>🕓 도착:</strong> 15:40 (15분 소요, 오르막길)</p>
+                        <p><strong>⏱️ 체류:</strong> 15:40 - 16:30 (50분) ⭐</p>
+                    </div>
+
+                    <div class="modal-section" style="background: #ffe0b2; padding: 15px; border-radius: 10px;">
+                        <h3>🅿️ 주차 - 드롭오프 작전!</h3>
+                        <p><strong>1단계:</strong> 공원 앞 정차 → 사모님들 하차</p>
+                        <p><strong>2단계:</strong> 운전자 3명 차 빼서 언덕 아래 대기</p>
+                        <p><strong>3단계:</strong> 16:25에 공원 앞으로 픽업</p>
+                        <p style="margin-top: 10px; color: #bf360c; font-weight: 600;">Highland Drive 노상 주차 가능하나 매우 혼잡</p>
+                    </div>
+
+                    <div class="modal-section" style="background: #ffcdd2; padding: 15px; border-radius: 10px;">
+                        <h3>🚻 화장실</h3>
+                        <p style="color: #b71c1c; font-weight: 700; font-size: 1.1em;">❌ 없음!</p>
+                        <p>파이크 플레이스에서 반드시 이용 완료!</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-button" onclick="closeModal('traffic_kerry')">닫기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 가스 웍스 공원 교통 정보 -->
+        <div id="traffic_gasworks" class="modal" onclick="closeModalOnOutside(event, 'traffic_gasworks')">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <span class="close" onclick="closeModal('traffic_gasworks')">×</span>
+                    <h2>🏭 가스 웍스 공원 - 교통 정보</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section" style="background: #f3e5f5; padding: 15px; border-radius: 10px;">
+                        <h3>📍 주소</h3>
+                        <p style="font-size: 1.1em; margin-bottom: 10px;">
+                            <a href="https://maps.google.com/?q=2101+N+Northlake+Way,+Seattle,+WA+98103" target="_blank" style="color: #6a1b9a; font-weight: 700; text-decoration: underline;">
+                                2101 N Northlake Way, Seattle, WA 98103
+                            </a>
+                        </p>
+                        <p><strong>🕓 출발:</strong> 16:30 (케리 공원)</p>
+                        <p><strong>🕔 도착:</strong> 16:45 (15분 소요)</p>
+                        <p><strong>⏱️ 체류:</strong> 16:45 - 17:15 (30분)</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🅿️ 주차 정보</h3>
+                        <p><strong>위치:</strong> 공원 입구 무료 주차장</p>
+                        <p><strong>차량:</strong> 3대 주차 가능</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>🚻 화장실</h3>
+                        <p style="color: #2e7d32; font-weight: 700;">✅ 공원 내 있음</p>
+                    </div>
+
+                    <div class="modal-section" style="background: #fff9c4; padding: 15px; border-radius: 10px;">
+                        <h3>⚠️ 안전 및 주의사항</h3>
+                        <p><strong>시간:</strong> 저녁 (16:45-17:15)</p>
+                        <p><strong>안전:</strong> 18명 함께 밝은 곳에서 활동</p>
+                        <p><strong>주의:</strong> 잔디밭 거위 배설물 - 포장도로 이용</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-button" onclick="closeModal('traffic_gasworks')">닫기</button>
+                </div>
+            </div>
+        </div>
+        <!-- 숙소 도착 정보 모달 -->
+        <!-- 레돈도 숙소 상세 정보 모달 -->
+        <div id="accommodation_detail" class="modal" onclick="closeModalOnOutside(event, 'accommodation_detail')">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #a8e6cf 0%, #7ec8a3 100%);">
+                    <span class="close" onclick="closeModal('accommodation_detail')">×</span>
+                    <h2>🏠 레돈도 숙소 상세 정보</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section" style="background: #e8f5e9; padding: 20px; border-radius: 10px;">
+                        <h3>📍 주소</h3>
+                        <p style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700;">
+                            <a href="https://maps.google.com/?q=28736+Redondo+Beach+Dr+S,+Des+Moines,+WA+98198" target="_blank" style="color: #2e7d32; text-decoration: underline;">
+                                28736 Redondo Beach Dr S, Des Moines, WA 98198
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="modal-section" style="margin-top: 20px;">
+                        <h3>🏡 숙박 정보</h3>
+                        <p style="font-size: 1.05em;"><strong>기간:</strong> 3박 4일 (2월 2일-5일, 2026)</p>
+                        <p style="font-size: 1.05em;"><strong>체크인:</strong> 2월 2일 (일)</p>
+                        <p style="font-size: 1.05em;"><strong>투어:</strong> 2월 4일 (수)</p>
+                        <p style="font-size: 1.05em;"><strong>체크아웃:</strong> 2월 5일 (수)</p>
+                    </div>
+
+                    <div class="modal-section" style="background: #e1f5fe; padding: 15px; border-radius: 10px; margin-top: 20px;">
+                        <h3>🕘 투어 일정</h3>
+                        <p style="font-size: 1.05em;"><strong>출발:</strong> 오전 9:30 AM (정시!)</p>
+                        <p style="font-size: 1.05em;"><strong>귀환:</strong> 오후 6:30 PM</p>
+                        <p style="margin-top: 10px; color: #1976d2; font-weight: 600;">총 소요 시간: 9시간</p>
+                    </div>
+
+                    <div class="modal-section" style="margin-top: 20px;">
+                        <h3>🌊 저녁 활동 제안</h3>
+                        <p><strong>저녁 식사:</strong> 숙소에서 함께</p>
+                        <p><strong>교제:</strong> 하루 여정 나누기</p>
+                        <p><strong>휴식:</strong> Redondo Beach 야경 감상 (선택)</p>
+                    </div>
+
+                    <div class="modal-section" style="background: #fff3e0; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center;">
+                        <h3 style="margin-bottom: 15px;">🔗 Airbnb 예약</h3>
+                        <a href="https://www.airbnb.com/rooms/25228010" target="_blank" style="display: inline-block; background: #ff5a5f; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1em; box-shadow: 0 4px 10px rgba(255,90,95,0.3);">
+                            🏠 Airbnb 숙소 보기
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-button" onclick="closeModal('accommodation_detail')">닫기</button>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
