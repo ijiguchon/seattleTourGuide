@@ -527,10 +527,22 @@
             <!-- 구글 맵 링크 -->
             <div style="margin-bottom: 25px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);">
                 <h3 style="color: white; margin-bottom: 12px; font-size: 1.2em; font-weight: 700;">🗺️ 운전자용 전체 경로</h3>
-                <p style="color: rgba(255,255,255,0.95); margin-bottom: 12px;">차량 3대(7인승×2, 5인승×1) 전체 경로</p>
-                <a href="https://maps.app.goo.gl/LYAynpH5u1BSJDVm7" target="_blank" style="display: block; background: white; color: #667eea; padding: 15px 25px; border-radius: 10px; text-decoration: none; font-weight: 700; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-size: 1.1em;">
-                    📱 구글 맵 열기
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 12px;">차량 3대 전체 경로 (7+7+4=18명)</p>
+                
+                <!-- 네비게이션 직접 시작 버튼 -->
+                <a href="https://www.google.com/maps/dir/?api=1&destination=28736+Redondo+Beach+Dr+S,+Des+Moines,+WA+98198&waypoints=6501+Railroad+Ave,+Snoqualmie,+WA+98065|37500+SE+North+Bend+Way,+Snoqualmie,+WA+98065|1531+Western+Ave,+Seattle,+WA+98101|2111+7th+Ave,+Seattle,+WA+98121|211+W+Highland+Dr,+Seattle,+WA+98119|2101+N+Northlake+Way,+Seattle,+WA+98103&travelmode=driving" target="_blank" style="display: block; background: white; color: #667eea; padding: 15px 25px; border-radius: 10px; text-decoration: none; font-weight: 700; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-size: 1.1em; margin-bottom: 10px;">
+                    🧭 네비게이션 시작 (전체 경로)
                 </a>
+                
+                <!-- 기존 구글 맵 링크 (경로 확인용) -->
+                <a href="https://maps.app.goo.gl/LYAynpH5u1BSJDVm7" target="_blank" style="display: block; background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; text-align: center; font-size: 1em; border: 2px solid white;">
+                    📱 경로 미리보기
+                </a>
+                
+                <p style="color: rgba(255,255,255,0.85); margin-top: 12px; font-size: 0.95em; text-align: center;">
+                    💡 첫 번째 버튼: 네비 즉시 시작<br>
+                    두 번째 버튼: 경로 미리 확인
+                </p>
             </div>
 
             <div class="timeline-item">
@@ -1916,7 +1928,7 @@
                     <div class="modal-section" style="background: #e3f2fd; padding: 15px; border-radius: 10px;">
                         <h3>📍 주소</h3>
                         <p style="font-size: 1.1em; margin-bottom: 10px;">
-                            <a href="https://maps.google.com/?q=6501+Railroad+Ave,+Snoqualmie,+WA+98065" target="_blank" style="color: #1976d2; font-weight: 700; text-decoration: underline;">
+                            <a href="https://maps.google.com/maps/dir/?api=1&destination=6501+Railroad+Ave,+Snoqualmie,+WA+98065" target="_blank" style="color: #1976d2; font-weight: 700; text-decoration: underline;">
                                 6501 Railroad Ave, Snoqualmie, WA 98065
                             </a>
                         </p>
@@ -1955,7 +1967,7 @@
                     <div class="modal-section" style="background: #fff8e1; padding: 15px; border-radius: 10px;">
                         <h3>📍 주소</h3>
                         <p style="font-size: 1.1em; margin-bottom: 10px;">
-                            <a href="https://maps.google.com/?q=37500+SE+North+Bend+Way,+Snoqualmie,+WA+98065" target="_blank" style="color: #f57c00; font-weight: 700; text-decoration: underline;">
+                            <a href="https://maps.google.com/maps/dir/?api=1&destination=37500+SE+North+Bend+Way,+Snoqualmie,+WA+98065" target="_blank" style="color: #f57c00; font-weight: 700; text-decoration: underline;">
                                 37500 SE North Bend Way, Snoqualmie, WA 98065
                             </a>
                         </p>
@@ -1995,7 +2007,7 @@
                     <div class="modal-section" style="background: #fce4ec; padding: 15px; border-radius: 10px;">
                         <h3>📍 주소</h3>
                         <p style="font-size: 1.1em; margin-bottom: 10px;">
-                            <a href="https://maps.google.com/?q=1531+Western+Ave,+Seattle,+WA+98101" target="_blank" style="color: #c2185b; font-weight: 700; text-decoration: underline;">
+                            <a href="https://maps.google.com/maps/dir/?api=1&destination=1531+Western+Ave,+Seattle,+WA+98101" target="_blank" style="color: #c2185b; font-weight: 700; text-decoration: underline;">
                                 1531 Western Ave, Seattle, WA 98101 (Public Market Garage)
                             </a>
                         </p>
@@ -2035,7 +2047,7 @@
                     <div class="modal-section" style="background: #e0f2f1; padding: 15px; border-radius: 10px;">
                         <h3>📍 주소</h3>
                         <p style="font-size: 1.1em; margin-bottom: 10px;">
-                            <a href="https://maps.google.com/?q=2111+7th+Ave,+Seattle,+WA+98121" target="_blank" style="color: #00695c; font-weight: 700; text-decoration: underline;">
+                            <a href="https://maps.google.com/maps/dir/?api=1&destination=2111+7th+Ave,+Seattle,+WA+98121" target="_blank" style="color: #00695c; font-weight: 700; text-decoration: underline;">
                                 2111 7th Ave, Seattle, WA 98121
                             </a>
                         </p>
@@ -2074,7 +2086,7 @@
                     <div class="modal-section" style="background: #fff3e0; padding: 15px; border-radius: 10px;">
                         <h3>📍 주소</h3>
                         <p style="font-size: 1.1em; margin-bottom: 10px;">
-                            <a href="https://maps.google.com/?q=211+W+Highland+Dr,+Seattle,+WA+98119" target="_blank" style="color: #e65100; font-weight: 700; text-decoration: underline;">
+                            <a href="https://maps.google.com/maps/dir/?api=1&destination=211+W+Highland+Dr,+Seattle,+WA+98119" target="_blank" style="color: #e65100; font-weight: 700; text-decoration: underline;">
                                 211 W Highland Dr, Seattle, WA 98119
                             </a>
                         </p>
@@ -2114,7 +2126,7 @@
                     <div class="modal-section" style="background: #f3e5f5; padding: 15px; border-radius: 10px;">
                         <h3>📍 주소</h3>
                         <p style="font-size: 1.1em; margin-bottom: 10px;">
-                            <a href="https://maps.google.com/?q=2101+N+Northlake+Way,+Seattle,+WA+98103" target="_blank" style="color: #6a1b9a; font-weight: 700; text-decoration: underline;">
+                            <a href="https://maps.google.com/maps/dir/?api=1&destination=2101+N+Northlake+Way,+Seattle,+WA+98103" target="_blank" style="color: #6a1b9a; font-weight: 700; text-decoration: underline;">
                                 2101 N Northlake Way, Seattle, WA 98103
                             </a>
                         </p>
@@ -2158,7 +2170,7 @@
                     <div class="modal-section" style="background: #e8f5e9; padding: 20px; border-radius: 10px;">
                         <h3>📍 주소</h3>
                         <p style="font-size: 1.2em; margin-bottom: 10px; font-weight: 700;">
-                            <a href="https://maps.google.com/?q=28736+Redondo+Beach+Dr+S,+Des+Moines,+WA+98198" target="_blank" style="color: #2e7d32; text-decoration: underline;">
+                            <a href="https://maps.google.com/maps/dir/?api=1&destination=28736+Redondo+Beach+Dr+S,+Des+Moines,+WA+98198" target="_blank" style="color: #2e7d32; text-decoration: underline;">
                                 28736 Redondo Beach Dr S, Des Moines, WA 98198
                             </a>
                         </p>
